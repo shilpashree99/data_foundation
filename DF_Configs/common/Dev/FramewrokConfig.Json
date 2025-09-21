@@ -1,0 +1,46 @@
+{
+    "env": "dev",
+    "subscription_id": "78512515-0d12-4615-adf8-45fb4495ea3c",
+    "resource_group": "azure_data_foundation",
+    "location": "South India",
+    "storage": {
+        "account": "datafoundationadls",
+        "dfs_endpoint": "https://datafoundationadls.dfs.core.windows.net/",
+        "containers": {
+            "raw": "df-raw",
+            "raw_temp": "df-raw-temp",
+            "raw_error": "df-raw-error",
+            "transformed": "df-transformed",
+            "transformed_temp": "df-transformed-temp",
+            "transformed_error": "df-transformed-error",
+            "sanitized": "df-sanitized",
+            "curated": "df-curated",
+            "optimized": "df-optimized"
+        }
+    },
+    "sql": {
+        "server": "datafoundation-sever-dev001.database.windows.net",
+        "database": "datafoundation-DB-dev001",
+        "admin_user": "shilpashree99",
+        "admin_password_secret": "sql-admin-pwd-dev"
+    },
+    "keyvault": {
+        "name": "datafoundation-KV-dev001",
+        "secrets": {
+            "sp_azure_blob": "datafoundation-blob-access-secret",
+            "databricks_pat": "databricks-pat-dev"
+        }
+    },
+    "databricks": {
+        "workspace_url": "https://adb-xxxxxx.azuredatabricks.net"
+    },
+    "adf": {
+        "name": "datafoundation-DF-dev001",
+        "git_repo": "https://github.com/shilpashree99/data_foundation.git",
+        "git_branch": "Dev"
+    },
+    "ci": {
+        "git_branch": "Dev",
+        "deploy_user": "Shilpashree SR"
+    }
+}
