@@ -1,17 +1,3 @@
-INSERT INTO metadata.ConnectionDetails
-(
-    SourceConnectionName,
-    SourceType,
-    ConnectionDesc,
-    IsActive,
-    StorageAccountName,
-    StorageContainerName,
-    ServicePrincipalId,
-    ServicePrincipalSecretKVName,
-    RecordCreatedBy
-)
-
-
 /* =========================================================================
    DML for ConnectionDetails
    Using temp table + MERGE pattern
