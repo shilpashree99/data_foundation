@@ -19,23 +19,38 @@
 					"storedProcedureName": "[metadata].[usp_StartBatch]",
 					"storedProcedureParameters": {
 						"ApplicationName": {
-							"value": "@pipeline().parameters.p_ApplicationName",
+							"value": {
+								"value": "@pipeline().parameters.p_ApplicationName",
+								"type": "Expression"
+							},
 							"type": "String"
 						},
 						"BatchID": {
 							"type": "String"
 						},
 						"LoadGroupName": {
-							"value": "@pipeline().parameters.p_LoadGroupName",
+							"value": {
+								"value": "@pipeline().parameters.p_LoadGroupName",
+								"type": "Expression"
+							},
 							"type": "String"
 						},
 						"SourceSystemName": {
-							"value": "@pipeline().parameters.p_SourceSystemName",
+							"value": {
+								"value": "@pipeline().parameters.p_SourceSystemName",
+								"type": "Expression"
+							},
 							"type": "String"
 						},
 						"StageName": {
-							"value": "@pipeline().parameters.p_StageName",
+							"value": {
+								"value": "@pipeline().parameters.p_StageName",
+								"type": "Expression"
+							},
 							"type": "String"
+						},
+						"childBatchID": {
+							"value": "@activity('Log_Batch_Details').output.outputParameters.BatchID\n"
 						}
 					}
 				},
@@ -56,6 +71,9 @@
 				"type": "string"
 			},
 			"p_StageName": {
+				"type": "string"
+			},
+			"childBatchID": {
 				"type": "string"
 			}
 		},

@@ -86,7 +86,25 @@
 						"referenceName": "child_Log_Source_to_Raw_Ingestion",
 						"type": "PipelineReference"
 					},
-					"waitOnCompletion": true
+					"waitOnCompletion": true,
+					"parameters": {
+						"p_ApplicationName": {
+							"value": "@pipeline().parameters.ApplicationName",
+							"type": "Expression"
+						},
+						"p_SourceSystemName": {
+							"value": "@pipeline().parameters.SourceSystemName",
+							"type": "Expression"
+						},
+						"p_LoadGroupName": {
+							"value": "@pipeline().parameters.LoadGroupName",
+							"type": "Expression"
+						},
+						"p_StageName": {
+							"value": "@pipeline().parameters.StageName",
+							"type": "Expression"
+						}
+					}
 				}
 			}
 		],
