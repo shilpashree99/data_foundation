@@ -82,6 +82,10 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"pipeline": {
+						"referenceName": "child_Log_Source_to_Raw_Ingestion",
+						"type": "PipelineReference"
+					},
 					"waitOnCompletion": true
 				}
 			}
