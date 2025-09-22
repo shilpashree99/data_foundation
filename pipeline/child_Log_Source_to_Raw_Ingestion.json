@@ -26,7 +26,10 @@
 							"type": "String"
 						},
 						"BatchID": {
-							"value": "@pipeline().parameters.p_BatchID",
+							"value": {
+								"value": "@pipeline().parameters.p_BatchID",
+								"type": "Expression"
+							},
 							"type": "String"
 						},
 						"LoadGroupName": {
@@ -71,7 +74,7 @@
 			"p_StageName": {
 				"type": "string"
 			},
-			"childBatchID": {
+			"p_BatchID": {
 				"type": "string"
 			}
 		},
