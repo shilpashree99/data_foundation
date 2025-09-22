@@ -48,9 +48,6 @@
 								"type": "Expression"
 							},
 							"type": "String"
-						},
-						"childBatchID": {
-							"value": "@activity('Log_Batch_Details').output.outputParameters.BatchID\n"
 						}
 					}
 				},
