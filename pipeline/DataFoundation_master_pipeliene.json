@@ -40,6 +40,50 @@
 					},
 					"firstRowOnly": false
 				}
+			},
+			{
+				"name": "Set_BatchID",
+				"description": "This activity Intializes the variable batchID in 'yyyyMMddHHmmss' format which is required for entire source to raw framework execution, if source to raw needs to run independently",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Fetch_Framework_Configuration_from_JSON",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "BatchID",
+					"value": {
+						"value": "@concat(variables('SourceSystemName'), '_', formatDateTime(utcnow(),'yyyyMMddHHmmss'))\n",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "Log_Source_To_Raw_Ingestion_Start",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Set_BatchID",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"parameters": {
