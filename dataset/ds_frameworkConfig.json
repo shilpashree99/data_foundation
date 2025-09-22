@@ -1,0 +1,35 @@
+{
+	"name": "ds_frameworkConfig",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_adls_datafoundation",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Folder_Path": {
+				"type": "string"
+			},
+			"File_Name": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().File_Name",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().Folder_Path",
+					"type": "Expression"
+				},
+				"fileSystem": "config"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,119 @@
+{
+	"name": "DataFoundation_master_pipeliene",
+	"properties": {
+		"activities": [
+			{
+				"name": "Fetch_Framework_Configuration_from_JSON",
+				"description": "This activity fetches the framework configurations from the JSON file",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
+					},
+					"dataset": {
+						"referenceName": "ds_frameworkConfig",
+						"type": "DatasetReference",
+						"parameters": {
+							"Folder_Path": {
+								"value": "@concat('common/', variables('env'))",
+								"type": "Expression"
+							},
+							"File_Name": "FramewrokConfig.Json"
+						}
+					},
+					"firstRowOnly": false
+				}
+			}
+		],
+		"parameters": {
+			"LoadGroupName": {
+				"type": "string",
+				"defaultValue": "AdverityBlobGroup"
+			},
+			"SourceSystemName": {
+				"type": "string",
+				"defaultValue": "'Customer Data'"
+			},
+			"DatasetName": {
+				"type": "string",
+				"defaultValue": "'customer'"
+			},
+			"Env": {
+				"type": "string",
+				"defaultValue": "Dev"
+			},
+			"BatchID": {
+				"type": "string",
+				"defaultValue": "NA"
+			},
+			"ApplicationName": {
+				"type": "string",
+				"defaultValue": "NA"
+			},
+			"StageName": {
+				"type": "string",
+				"defaultValue": "NA"
+			},
+			"LoadStartTime": {
+				"type": "string",
+				"defaultValue": "NA"
+			},
+			"LoadEndTime": {
+				"type": "string",
+				"defaultValue": "NA"
+			},
+			"LoadStatus": {
+				"type": "string",
+				"defaultValue": "NA"
+			},
+			"Folder_Path": {
+				"type": "string",
+				"defaultValue": "NA"
+			},
+			"File_Name": {
+				"type": "string"
+			}
+		},
+		"variables": {
+			"Env": {
+				"type": "String",
+				"defaultValue": "Dev"
+			},
+			"BatchID": {
+				"type": "String"
+			},
+			"SourceSystemName": {
+				"type": "String",
+				"defaultValue": "Adverity"
+			},
+			"DatasetName": {
+				"type": "String",
+				"defaultValue": "customer"
+			},
+			"LoadGroupName": {
+				"type": "String",
+				"defaultValue": "CustomerLoad"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2025-09-22T16:02:43Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

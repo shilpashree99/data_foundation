@@ -1,0 +1,9 @@
+{
+	"name": "datafoundation-DF-dev001",
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "2658d1d7-f729-4884-803c-b0cb8db010d4",
+		"tenantId": "0aa7a7ac-c654-4470-b74d-05b41e4b28e5"
+	}
+}
