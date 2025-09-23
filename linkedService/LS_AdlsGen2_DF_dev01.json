@@ -1,0 +1,11 @@
+{
+	"name": "LS_AdlsGen2_DF_dev01",
+	"properties": {
+		"description": "This is linked service for ADLS Gen 2 storage for Data foundation",
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://datafoundationadls.dfs.core.windows.net/"
+		}
+	}
+}
