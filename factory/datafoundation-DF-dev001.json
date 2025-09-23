@@ -1,5 +1,13 @@
 {
 	"name": "datafoundation-DF-dev001",
+	"properties": {
+		"globalParameters": {
+			"frameworkConfigADLSUrl": {
+				"type": "string",
+				"value": "<adls_conn_string>"
+			}
+		}
+	},
 	"location": "southindia",
 	"identity": {
 		"type": "SystemAssigned",
