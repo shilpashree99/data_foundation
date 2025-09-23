@@ -32,13 +32,16 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"Folder_Path": {
-								"value": "@concat('common/', variables('env'))",
+								"value": "@pipeline().globalParameters.frameworkConfigFilePath",
 								"type": "Expression"
 							},
-							"File_Name": "FramewrokConfig.Json"
+							"File_Name": {
+								"value": "@pipeline().globalParameters.frameworkConfigFileName",
+								"type": "Expression"
+							}
 						}
 					},
-					"firstRowOnly": false
+					"firstRowOnly": true
 				}
 			},
 			{
@@ -115,67 +118,17 @@
 			},
 			"SourceSystemName": {
 				"type": "string",
-				"defaultValue": "'Customer Data'"
+				"defaultValue": "'CustomerData'"
 			},
 			"DatasetName": {
 				"type": "string",
 				"defaultValue": "'customer'"
 			},
-			"Env": {
-				"type": "string",
-				"defaultValue": "Dev"
-			},
 			"BatchID": {
-				"type": "string",
-				"defaultValue": "NA"
-			},
-			"ApplicationName": {
-				"type": "string",
-				"defaultValue": "NA"
-			},
-			"StageName": {
-				"type": "string",
-				"defaultValue": "NA"
-			},
-			"LoadStartTime": {
-				"type": "string",
-				"defaultValue": "NA"
-			},
-			"LoadEndTime": {
-				"type": "string",
-				"defaultValue": "NA"
-			},
-			"LoadStatus": {
-				"type": "string",
-				"defaultValue": "NA"
-			},
-			"Folder_Path": {
-				"type": "string",
-				"defaultValue": "NA"
-			},
-			"File_Name": {
 				"type": "string"
-			}
-		},
-		"variables": {
-			"Env": {
-				"type": "String",
-				"defaultValue": "Dev"
 			},
-			"BatchID": {
-				"type": "String"
-			},
-			"SourceSystemName": {
-				"type": "String",
-				"defaultValue": "Adverity"
-			},
-			"DatasetName": {
-				"type": "String",
-				"defaultValue": "customer"
-			},
-			"LoadGroupName": {
-				"type": "String",
-				"defaultValue": "CustomerLoad"
+			"BatchStartTime": {
+				"type": "string"
 			}
 		},
 		"annotations": [],
