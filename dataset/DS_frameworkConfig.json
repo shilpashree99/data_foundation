@@ -1,8 +1,9 @@
 {
-	"name": "ds_frameworkConfig",
+	"name": "DS_frameworkConfig",
 	"properties": {
+		"description": "This Dataset point to the framework configuration which enables us to dynamically read your configuration file from the lake at runtime.",
 		"linkedServiceName": {
-			"referenceName": "ls_adls_datafoundation",
+			"referenceName": "LS_AdlsGen2_DF_dev01",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
@@ -25,8 +26,7 @@
 				"folderPath": {
 					"value": "@dataset().Folder_Path",
 					"type": "Expression"
-				},
-				"fileSystem": "config"
+				}
 			}
 		},
 		"schema": {}
