@@ -9,6 +9,10 @@
 			"frameworkConfigFilePath": {
 				"type": "string",
 				"value": "<config_filepath_string>"
+			},
+			"frameworkConfigFileName": {
+				"type": "string",
+				"value": "<config_filename_string>"
 			}
 		}
 	},
