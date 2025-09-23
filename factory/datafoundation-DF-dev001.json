@@ -5,6 +5,10 @@
 			"frameworkConfigADLSUrl": {
 				"type": "string",
 				"value": "<adls_conn_string>"
+			},
+			"frameworkConfigFilePath": {
+				"type": "string",
+				"value": "<config_filepath_string>"
 			}
 		}
 	},
